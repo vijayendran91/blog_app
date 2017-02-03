@@ -1,3 +1,14 @@
-Hello World
 
-<%= link_to "New Article", new_article_path %>
+
+<%= link_to "New Article", new_article_path, class: "btn btn-primary btn-lg btn-clrs" %>
+
+<% @article.each do |art| %>
+    <div class="well well-lg">
+      <div class="article-title">
+  <%= link_to art.title, article_path(art) %>
+        </div>
+      <div class="article-body">
+    <%= art.body %>
+    </div>
+    </div>
+<%end%>
