@@ -1,6 +1,6 @@
 class ArticlesController<ApplicationController
   def index
-
+    @article=Article.all
   end
   def new
     @article=Article.new
@@ -11,10 +11,15 @@ class ArticlesController<ApplicationController
       flash[:success] = "Article has been created"
       redirect_to articles_path
     else
-      flash[:danger] = "Article cannot be created"
+      flash.now[:danger] = "Article cannot be created"
       render :new
     end
   end
+
+  def show
+
+  end
+
   private
 
     def article_params

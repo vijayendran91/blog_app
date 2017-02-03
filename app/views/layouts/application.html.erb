@@ -64,11 +64,11 @@
       </div><!-- /.container-fluid -->
     </nav>
   </header>
-    <%=flash.each do |key,message| %>
-      <div class="text-center alert alert-<%= key == 'notice'? 'success':'danger'%>">
-          <%message%>
+  <% flash.each do |key, message| %>
+      <div class="text-center alert alert-<%= key == 'notice'? 'success': 'danger' %>">
+        <%= message %>
       </div>
-    <%end%>
+  <% end %>
     <%= yield %>
   </body>
 </html>
