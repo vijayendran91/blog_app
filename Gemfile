@@ -42,6 +42,9 @@ group :development, :test do
   gem 'byebug', platform: :mri
 
 end
+gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 
 group :test do
   gem 'capybara', '2.7.1'
