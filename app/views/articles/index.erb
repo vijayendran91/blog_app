@@ -1,14 +1,17 @@
-
-
 <%= link_to "New Article", new_article_path, class: "btn btn-primary btn-lg btn-clrs" %>
-
-<% @article.each do |art| %>
-    <div class="well well-lg">
-      <div class="article-title">
-  <%= link_to art.title, article_path(art) %>
+<% if @article.empty? %>
+    <h1 id ="no-articles">
+      No Articles Created
+    </h1>
+<% else %>
+    <% @article.each do |art| %>
+        <div class="well well-lg">
+          <div class="article-title">
+            <%= link_to art.title, article_path(art) %>
+          </div>
+          <div class="article-body">
+            <%= art.body %>
+          </div>
         </div>
-      <div class="article-body">
-    <%= art.body %>
-    </div>
-    </div>
+    <% end %>
 <%end%>
