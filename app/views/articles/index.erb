@@ -1,5 +1,7 @@
-<%= link_to "New Article", new_article_path, class: "btn btn-primary btn-lg btn-clrs" %>
-<% if @article.empty? %>
+<% if user_signed_in? %>
+  <%= link_to "New Article", new_article_path, class: "btn btn-primary btn-lg btn-clrs" %>
+<%end%>
+    <% if @article.empty? %>
     <h1 id ="no-articles">
       No Articles Created
     </h1>

@@ -1,7 +1,7 @@
 class ArticlesController<ApplicationController
 
   before_action :set_article, only: [:show, :destroy, :edit, :update]
-  before_action :authenticate_article, except: [:index,:show]
+  #before_action :authenticate_article, except: [:index,:show]
   def index
     @article=Article.all
   end
