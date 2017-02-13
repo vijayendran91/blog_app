@@ -31,4 +31,16 @@ RSpec.feature "Showing Article Specifications" do
     expect(page).not_to have_link("Edit Article")
     expect(page).not_to have_link("Delete Article")
   end
+
+  scenario "owner signed in" do
+
+    visit "/"
+    login_as(@john)
+    click_link @article.title
+    expect(page).to have_content(@article.title)
+    expect(page).to have_content(@article.body)
+    expect(current_path).to eq(article_path(@article))
+    expect(page).to have_link("Edit Article")
+    expect(page).to have_link("Delete Article")
+  end
 end
